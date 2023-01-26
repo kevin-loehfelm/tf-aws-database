@@ -21,7 +21,7 @@ module "db" {
   create_db_option_group    = local.create_database
   create_db_parameter_group = local.create_database
 
-  identifier = "web-demo-mysql"
+  identifier = "demo-mysql"
 
   engine               = "mysql"
   major_engine_version = "5.7"
@@ -30,7 +30,7 @@ module "db" {
   instance_class       = "db.m5.large"
   allocated_storage    = 5
 
-  db_name  = "web-mysql"
+  db_name  = "prod"
   username = "dbadmin"
   port     = "3306"
 
