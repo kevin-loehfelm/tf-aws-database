@@ -27,7 +27,7 @@ module "db" {
   major_engine_version = "5.7"
   family               = "mysql5.7"
   engine_version       = "5.7.40"
-  instance_class       = "db.t3a.medium"
+  instance_class       = "db.m5.large"
   allocated_storage    = 5
 
   db_name  = "web-mysql"

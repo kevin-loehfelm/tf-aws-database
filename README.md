@@ -1,5 +1,3 @@
-# tf-aws-database
-
 ## Requirements
 
 No requirements.
@@ -36,4 +34,8 @@ No optional inputs.
 
 ## Outputs
 
-No outputs.
+The following outputs are exported:
+
+### <a name="output_test"></a> [test](#output\_test)
+
+Description: Test output
