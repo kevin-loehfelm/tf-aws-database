@@ -1,5 +1,5 @@
 locals {
-  create_database = true
+  create_database = false
 }
 
 data "terraform_remote_state" "network" {
