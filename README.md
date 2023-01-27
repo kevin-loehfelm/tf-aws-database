@@ -32,9 +32,25 @@ No required inputs.
 
 The following input variables are optional (have default values):
 
-### <a name="input_create_database"></a> [create\_database](#input\_create\_database)
+### <a name="input_enable_database"></a> [enable\_database](#input\_enable\_database)
 
-Description: n/a
+Description: Enable creation of RDS database
+
+Type: `bool`
+
+Default: `false`
+
+### <a name="input_label"></a> [label](#input\_label)
+
+Description: Resource label
+
+Type: `string`
+
+Default: `"demo"`
+
+### <a name="input_skip_final_snapshot"></a> [skip\_final\_snapshot](#input\_skip\_final\_snapshot)
+
+Description: Skip final snapshot when removing RDS instance(s)
 
 Type: `bool`
 
@@ -47,3 +63,7 @@ The following outputs are exported:
 ### <a name="output_endpoint"></a> [endpoint](#output\_endpoint)
 
 Description: RDS Endpoint
+
+### <a name="output_label"></a> [label](#output\_label)
+
+Description: RDS resource label

@@ -12,12 +12,12 @@ data "terraform_remote_state" "network" {
 module "db" {
   source = "terraform-aws-modules/rds/aws"
 
-  create_db_instance        = var.create_database
-  create_db_subnet_group    = var.create_database
-  create_db_option_group    = var.create_database
-  create_db_parameter_group = var.create_database
+  create_db_instance        = var.enable_database
+  create_db_subnet_group    = var.enable_database
+  create_db_option_group    = var.enable_database
+  create_db_parameter_group = var.enable_database
 
-  identifier = "demo-mysql"
+  identifier = "${var.label}-rds"
 
   engine               = "mysql"
   major_engine_version = "5.7"
@@ -26,11 +26,12 @@ module "db" {
   instance_class       = "db.m5.large"
   allocated_storage    = 5
 
-  db_name  = "prod"
+  db_name  = "${var.label}-db"
   username = "dbadmin"
   port     = "3306"
 
-  multi_az = true
+  multi_az            = true
+  skip_final_snapshot = var.skip_final_snapshot
 
   subnet_ids = data.terraform_remote_state.network.outputs.database_subnets
 
