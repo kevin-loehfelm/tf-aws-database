@@ -30,7 +30,15 @@ No required inputs.
 
 ## Optional Inputs
 
-No optional inputs.
+The following input variables are optional (have default values):
+
+### <a name="input_create_database"></a> [create\_database](#input\_create\_database)
+
+Description: n/a
+
+Type: `bool`
+
+Default: `true`
 
 ## Outputs
 

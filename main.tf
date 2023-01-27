@@ -1,7 +1,3 @@
-locals {
-  create_database = true
-}
-
 data "terraform_remote_state" "network" {
   backend = "remote"
 
@@ -16,10 +12,10 @@ data "terraform_remote_state" "network" {
 module "db" {
   source = "terraform-aws-modules/rds/aws"
 
-  create_db_instance        = local.create_database
-  create_db_subnet_group    = local.create_database
-  create_db_option_group    = local.create_database
-  create_db_parameter_group = local.create_database
+  create_db_instance        = var.create_database
+  create_db_subnet_group    = var.create_database
+  create_db_option_group    = var.create_database
+  create_db_parameter_group = var.create_database
 
   identifier = "demo-mysql"
 
@@ -42,6 +38,6 @@ module "db" {
     "env:platform"     = "aws"
     "env:provisioner"  = "Terraform"
     "tfc:organization" = "kloehfelm-demo"
-    "tfc:workspace"    = "tf-aws-database"
+    "tfc:workspace"    = "${terraform.workspace}"
   }
 }
