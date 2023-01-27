@@ -44,6 +44,6 @@ Default: `true`
 
 The following outputs are exported:
 
-### <a name="output_test"></a> [test](#output\_test)
+### <a name="output_endpoint"></a> [endpoint](#output\_endpoint)
 
-Description: Test output
+Description: RDS Endpoint

@@ -1,4 +1,4 @@
-output "test" {
-  description = "Test output"
-  value       = "hello"
+output "endpoint" {
+  description = "RDS Endpoint"
+  value       = var.create_database ? module.db.db_instance_endpoint : null
 }
